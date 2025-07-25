@@ -20,12 +20,12 @@ function AddComponent({setIsLoading}) {
       <input
         name="id"
         ref={idRef}
-        placeholder="Nhập ID"
+        placeholder="Enter ID"
       />
       <input
         name="name"
         ref={nameRef}
-        placeholder="Nhập tên"
+        placeholder="Enter Name"
       />
       <button onClick={handleAdd}>Save</button>
     </>

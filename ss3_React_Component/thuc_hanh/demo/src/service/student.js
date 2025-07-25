@@ -31,3 +31,16 @@ export function deleteById(id) {
     students.splice(index, 1);
   }
 }
+
+export function updateById(id, updatedStudent) {
+  const index = students.findIndex((student) => student.id === id);
+  if (index !== -1) {
+    students[index] = { ...students[index], ...updatedStudent };
+  }
+}
+
+export function search(name) {
+  return students.filter((student) =>
+      student.name.toLowerCase().includes(name.toLowerCase())
+    );
+}
