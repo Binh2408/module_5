@@ -10,24 +10,28 @@ import { Container, Button } from "react-bootstrap";
 function AddComponent() {
   const navigate = useNavigate();
   const [classList, setClassList] = useState([]);
-
   useEffect(() => {
-    setClassList([...findAll()]);
+    // setClassList([...findAll()]);
+    const fetchDataClasses = async () => {
+      const list = await findAll();
+      setClassList(list);
+    };
+    fetchDataClasses();
   }, []);
 
   const [student, setStudent] = useState({
-    id: "",
+    // id: "",
     name: "",
     subject: [],
     classCG: "",
   });
 
-  const handleAdd = (value) => {
+  const handleAdd = async (value) => {
     value = {
       ...value,
       classCG: JSON.parse(value.classCG),
     };
-    add(value);
+    await add(value);
     navigate("/list");
     toast.success("Add success!!!");
   };
@@ -86,7 +90,11 @@ function AddComponent() {
               />
               <label className="form-check-label">React</label>
             </div>
-            <ErrorMessage name="subject" component="div" className="text-danger" />
+            <ErrorMessage
+              name="subject"
+              component="div"
+              className="text-danger"
+            />
           </div>
 
           <div className="mb-3">
@@ -99,7 +107,11 @@ function AddComponent() {
                 </option>
               ))}
             </Field>
-            <ErrorMessage name="classCG" component="div" className="text-danger" />
+            <ErrorMessage
+              name="classCG"
+              component="div"
+              className="text-danger"
+            />
           </div>
 
           <Button type="submit" variant="primary">

@@ -12,10 +12,15 @@ function DetailComponent() {
   const [student, setStudent] = useState(null);
 
   useEffect(() => {
-    const result = findById(+id);
-    setStudent(result);
-    console.log("ID param from URL:", id);
-    console.log("Find result:", result);
+    // const result = findById(+id);
+    // setStudent(result);
+    // console.log("ID param from URL:", id);
+    // console.log("Find result:", result);
+    const fetchData = async () => {
+      let student = await findById(id);
+      setStudent(student);
+    }
+    fetchData();
   }, [id]);
 
   if (!student) {

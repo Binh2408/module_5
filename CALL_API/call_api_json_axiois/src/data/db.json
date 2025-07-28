@@ -1,0 +1,18 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Sam Sung"
+    },
+    {
+      "id": 2,
+      "name": "Nokia"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "name": "Bình"
+    }
+  ]
+}

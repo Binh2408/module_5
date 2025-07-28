@@ -1,0 +1,64 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Bình GOLD",
+      "subject": [
+        "Java",
+        "JavaScript",
+        "React"
+      ],
+      "classCG": {
+        "id": 1,
+        "name": "C03"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Bình GOLDEN",
+      "subject": [
+        "Java",
+        "JavaScript",
+        "React"
+      ],
+      "classCG": {
+        "id": 1,
+        "name": "C02"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Binh",
+      "subject": [
+        "JavaScript",
+        "React"
+      ],
+      "classCG": {
+        "id": 1,
+        "name": "C02"
+      }
+    },
+    {
+      "id": 4,
+      "name": "CuBinh",
+      "subject": [
+        "Java",
+        "JavaScript"
+      ],
+      "classCG": {
+        "id": 2,
+        "name": "C03"
+      }
+    }
+  ],
+  "classCG": [
+    {
+      "id": 1,
+      "name": "C02"
+    },
+    {
+      "id": 2,
+      "name": "C03"
+    }
+  ]
+}

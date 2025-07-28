@@ -19,13 +19,57 @@ function ListComponent() {
     },
   });
   const [searchTerm, setSearchTerm] = useState("");
-  useEffect(() => {
-    if (searchTerm.trim() === "") {
-      setStudentList([...findAll()]);
-    } else {
-      setStudentList([...search(searchTerm)]);
-    }
-  }, [isLoading, isShowModal, searchTerm]);
+  const [selectedClass, setSelectedClass] = useState("");
+const [classOptions, setClassOptions] = useState([]);
+
+useEffect(() => {
+  const fetchClasses = async () => {
+    const res = await fetch("http://localhost:8080/classCG");
+    const data = await res.json();
+    setClassOptions(data);
+  };
+  fetchClasses();
+}, []);
+
+  // useEffect(() => {
+    // const fetchData = async () => {
+      // let list = [];
+      // if (searchTerm.trim() === "") {
+        // list = await findAll();
+      // } else {
+        // list = await search(searchTerm);
+      // }
+      // setStudentList(list);
+    // };
+    // fetchData();
+  // }, [isLoading, isShowModal, searchTerm]);
+// useEffect(() => {
+  // const fetchData = async () => {
+    // let list = await findAll(); // Lấy toàn bộ sinh viên
+    // if (searchTerm.trim() !== "") {
+      // const keyword = searchTerm.toLowerCase().trim();
+      // list = list.filter((student) => {
+        // return (
+          // student.name.toLowerCase().includes(keyword) ||
+          // student.classCG.name.toLowerCase().includes(keyword)
+        // );
+      // });
+    // }
+    // setStudentList(list);
+  // };
+// 
+  // fetchData();
+// }, [isLoading, isShowModal, searchTerm]);
+useEffect(() => {
+  const fetchData = async () => {
+    // setIsLoading(true);
+    const result = await search(searchTerm, selectedClass); // Gọi hàm search bạn viết
+    setStudentList(result);
+    setIsLoading(false);
+  };
+
+  fetchData();
+}, [isLoading, isShowModal, searchTerm, selectedClass]);
 
   const handleShowDeleteModal = (student) => {
     setIsShowModal((prev) => !prev);
@@ -39,11 +83,20 @@ function ListComponent() {
   return (
     <Container className="mt-4">
       <h2 className="mb-3">Student List</h2>
+  {/* <SearchComponent */}
+        {/* value={searchTerm} */}
+        {/* onChange={setSearchTerm} */}
+        {/* placeholder="Search by name..." */}
+      {/* /> */}
+
       <SearchComponent
-        value={searchTerm}
-        onChange={setSearchTerm}
-        placeholder="Search by name..."
-      />
+  nameValue={searchTerm}
+  onNameChange={setSearchTerm}
+  classOptions={classOptions}
+  selectedClass={selectedClass}
+  onClassChange={setSelectedClass}
+/>
+
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -88,7 +141,7 @@ function ListComponent() {
                 </td>
                 <td>
                   <Button
-                    variant="info"
+                    variant="warning"
                     size="sm"
                     as={Link}
                     to={`/edit/${student.id}`}
@@ -100,7 +153,7 @@ function ListComponent() {
             ))
           ) : (
             <tr>
-              <td colSpan="7" className="text-center text-danger">
+              <td colSpan="8" className="text-center text-danger">
                 Không tìm thấy sinh viên nào.
               </td>
             </tr>

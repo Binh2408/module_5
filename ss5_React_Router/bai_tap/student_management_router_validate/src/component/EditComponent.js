@@ -14,29 +14,41 @@ function EditComponent() {
   const [initialValues, setInitialValues] = useState(null);
 
   useEffect(() => {
-    const student = findById(id);
-    if (student) {
-      setInitialValues({
-        id: student.id,
-        name: student.name,
-        subject: student.subject,
-        classCG: JSON.stringify(student.classCG),
-      });
-    }
+    const fetchStudent = async () => {
+      const student = await findById(id);
+      if (student) {
+        setInitialValues({
+          id: student.id,
+          name: student.name,
+          subject: student.subject,
+          classCG: JSON.stringify(student.classCG),
+        });
+      }
+    };
+    fetchStudent();
   }, [id]);
 
   useEffect(() => {
-    setClassList([...findAll()]);
+    // setClassList([...findAll()]);
+    const fetchDataClasses = async () => {
+      const list = await findAll();
+      setClassList(list);
+    };
+    fetchDataClasses();
   }, []);
 
-  const handleUpdate = (values) => {
-    const updatedStudent = {
-      ...values,
-      classCG: JSON.parse(values.classCG),
-    };
-    updateById(updatedStudent.id, updatedStudent);
-    toast.success("Update success!");
-    navigate("/list");
+  const handleUpdate = async (values) => {
+    try {
+      const updatedStudent = {
+        ...values,
+        classCG: JSON.parse(values.classCG),
+      };
+      await updateById(updatedStudent.id, updatedStudent);
+      toast.success("Update success!");
+      navigate("/list");
+    } catch (error) {
+      toast.error("Updated failed");
+    }
   };
 
   const validationSchema = Yup.object({
@@ -58,6 +70,7 @@ function EditComponent() {
         initialValues={initialValues}
         onSubmit={handleUpdate}
         validationSchema={validationSchema}
+        //giúp formik cập nhật initialValues sau khi useEffect fetch dữ liệu xong
         enableReinitialize
       >
         <Form>
@@ -78,10 +91,7 @@ function EditComponent() {
                   className="form-check-input"
                   id={`subject-${subj}`}
                 />
-                <label
-                  htmlFor={`subject-${subj}`}
-                  className="form-check-label"
-                >
+                <label htmlFor={`subject-${subj}`} className="form-check-label">
                   {subj}
                 </label>
               </div>
@@ -103,7 +113,11 @@ function EditComponent() {
                 </option>
               ))}
             </Field>
-            <ErrorMessage name="classCG" component="div" className="text-danger" />
+            <ErrorMessage
+              name="classCG"
+              component="div"
+              className="text-danger"
+            />
           </div>
 
           <Button type="submit" variant="primary">
