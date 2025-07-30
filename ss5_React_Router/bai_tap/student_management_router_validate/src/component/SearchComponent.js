@@ -26,7 +26,7 @@ function SearchComponent({
           >
             <option value="">-----------All-Classes-----------</option>
             {classOptions.map((cls) => (
-              <option key={cls.id} value={cls.name}>
+              <option key={cls.id} value={cls.id}>
                 {cls.name}
               </option>
             ))}

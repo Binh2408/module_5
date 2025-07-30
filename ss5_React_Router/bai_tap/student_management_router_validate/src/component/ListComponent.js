@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DeleteComponent from "./DeleteComponent";
 import SearchComponent from "./SearchComponent";
 import { Container, Table, Button } from "react-bootstrap";
+import { Pagination } from "react-bootstrap";
 
 function ListComponent() {
   const [studentList, setStudentList] = useState([]);
@@ -20,56 +21,66 @@ function ListComponent() {
   });
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedClass, setSelectedClass] = useState("");
-const [classOptions, setClassOptions] = useState([]);
-
-useEffect(() => {
-  const fetchClasses = async () => {
-    const res = await fetch("http://localhost:8080/classCG");
-    const data = await res.json();
-    setClassOptions(data);
-  };
-  fetchClasses();
-}, []);
+  const [classOptions, setClassOptions] = useState([]);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
+  const [size, setSize] = useState(2);
+  useEffect(() => {
+    const fetchClasses = async () => {
+      const res = await fetch("http://localhost:8080/classCG");
+      const data = await res.json();
+      setClassOptions(data);
+    };
+    fetchClasses();
+  }, []);
 
   // useEffect(() => {
-    // const fetchData = async () => {
-      // let list = [];
-      // if (searchTerm.trim() === "") {
-        // list = await findAll();
-      // } else {
-        // list = await search(searchTerm);
-      // }
-      // setStudentList(list);
-    // };
-    // fetchData();
-  // }, [isLoading, isShowModal, searchTerm]);
-// useEffect(() => {
   // const fetchData = async () => {
-    // let list = await findAll(); // Lấy toàn bộ sinh viên
-    // if (searchTerm.trim() !== "") {
-      // const keyword = searchTerm.toLowerCase().trim();
-      // list = list.filter((student) => {
-        // return (
-          // student.name.toLowerCase().includes(keyword) ||
-          // student.classCG.name.toLowerCase().includes(keyword)
-        // );
-      // });
-    // }
-    // setStudentList(list);
+  // let list = [];
+  // if (searchTerm.trim() === "") {
+  // list = await findAll();
+  // } else {
+  // list = await search(searchTerm);
+  // }
+  // setStudentList(list);
   // };
-// 
   // fetchData();
-// }, [isLoading, isShowModal, searchTerm]);
-useEffect(() => {
-  const fetchData = async () => {
-    // setIsLoading(true);
-    const result = await search(searchTerm, selectedClass); // Gọi hàm search bạn viết
-    setStudentList(result);
-    setIsLoading(false);
-  };
+  // }, [isLoading, isShowModal, searchTerm]);
+  // useEffect(() => {
+  // const fetchData = async () => {
+  // let list = await findAll(); // Lấy toàn bộ sinh viên
+  // if (searchTerm.trim() !== "") {
+  // const keyword = searchTerm.toLowerCase().trim();
+  // list = list.filter((student) => {
+  // return (
+  // student.name.toLowerCase().includes(keyword) ||
+  // student.classCG.name.toLowerCase().includes(keyword)
+  // );
+  // });
+  // }
+  // setStudentList(list);
+  // };
+  //
+  // fetchData();
+  // }, [isLoading, isShowModal, searchTerm]);
+  useEffect(() => {
+    const fetchData = async () => {
+      // setIsLoading(true);
+      const { data, totalRecord } = await search(
+        searchTerm,
+        selectedClass,
+        page,
+        size
+      ); // Gọi hàm search bạn viết
+      setStudentList(data);
+      setTotalPage(() => Math.ceil(totalRecord / size));
+      setIsLoading(false);
+      // console.log(selectedClass);
+      // console.log(searchTerm);
+    };
 
-  fetchData();
-}, [isLoading, isShowModal, searchTerm, selectedClass]);
+    fetchData();
+  }, [isLoading, isShowModal, searchTerm, selectedClass, page, size]);
 
   const handleShowDeleteModal = (student) => {
     setIsShowModal((prev) => !prev);
@@ -80,22 +91,34 @@ useEffect(() => {
     setIsShowModal((prev) => !prev);
   };
 
+  const handlePre = () => {
+    if (page > 1) {
+      setPage((pre) => pre - 1);
+    }
+  };
+
+  const handleNext = () => {
+    if (page < totalPage) {
+      setPage((pre) => pre + 1);
+    }
+  };
+
   return (
     <Container className="mt-4">
       <h2 className="mb-3">Student List</h2>
-  {/* <SearchComponent */}
-        {/* value={searchTerm} */}
-        {/* onChange={setSearchTerm} */}
-        {/* placeholder="Search by name..." */}
+      {/* <SearchComponent */}
+      {/* value={searchTerm} */}
+      {/* onChange={setSearchTerm} */}
+      {/* placeholder="Search by name..." */}
       {/* /> */}
 
       <SearchComponent
-  nameValue={searchTerm}
-  onNameChange={setSearchTerm}
-  classOptions={classOptions}
-  selectedClass={selectedClass}
-  onClassChange={setSelectedClass}
-/>
+        nameValue={searchTerm}
+        onNameChange={setSearchTerm}
+        classOptions={classOptions}
+        selectedClass={selectedClass}
+        onClassChange={setSelectedClass}
+      />
 
       <Table striped bordered hover>
         <thead>
@@ -154,12 +177,31 @@ useEffect(() => {
           ) : (
             <tr>
               <td colSpan="8" className="text-center text-danger">
-                Không tìm thấy sinh viên nào.
+                Not found students.
               </td>
             </tr>
           )}
         </tbody>
       </Table>
+
+      <Pagination className="justify-content-center mt-4">
+        <Pagination.Prev disabled={page === 1} onClick={handlePre}>
+          Previous
+        </Pagination.Prev>
+        {[...Array(totalPage)].map((e,i) => (
+          <Pagination.Item
+            key={i}
+            active={i + 1 === page}
+            onClick={() => setPage(i + 1)}
+          >
+            {i + 1}
+          </Pagination.Item>
+        ))}
+        <Pagination.Next disabled={page === totalPage} onClick={handleNext}>
+          Next
+        </Pagination.Next>
+      </Pagination>
+
       <DeleteComponent
         isShowModal={isShowModal}
         deleteStudent={deleteStudent}

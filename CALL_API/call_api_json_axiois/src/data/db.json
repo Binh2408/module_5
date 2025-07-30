@@ -2,17 +2,328 @@
   "products": [
     {
       "id": 1,
-      "name": "Sam Sung"
+      "name": "iPhone 14 Pro Max",
+      "price": 33990000,
+      "description": "Điện thoại cao cấp của Apple với chip A16 Bionic",
+      "category": {
+        "id": 2,
+        "name": "Smartphone"
+      },
+      "quantity": 5,
+      "imageUrl": "https://i.pinimg.com/1200x/72/18/fe/7218fe67a5a40f65bb305479edc8a0da.jpg",
+      "importDate": "2025-07-20",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
     },
     {
       "id": 2,
-      "name": "Nokia"
+      "name": "Samsung Galaxy S23 Ultra",
+      "price": 29990000,
+      "description": "Smartphone Android cao cấp với camera 200MP",
+      "category": {
+        "id": 2,
+        "name": "Smartphone"
+      },
+      "quantity": 0,
+      "imageUrl": "https://i.pinimg.com/1200x/96/f9/a6/96f9a68f8a19490fffa6787db5f42a01.jpg",
+      "importDate": "2025-07-21",
+      "status": "Out of Stock",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "MacBook Air M2",
+      "price": 28990000,
+      "description": "Laptop mỏng nhẹ với chip Apple M2",
+      "category": {
+        "id": 1,
+        "name": "Laptop"
+      },
+      "quantity": 10,
+      "imageUrl": "https://i.pinimg.com/736x/fb/14/62/fb14628ed4f3d8bfc0594024a372fe6e.jpg",
+      "importDate": "2025-07-18",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Dell XPS 13",
+      "price": 25990000,
+      "description": "Laptop cao cấp với thiết kế gọn nhẹ, màn hình InfinityEdge",
+      "category": {
+        "id": 1,
+        "name": "Laptop"
+      },
+      "quantity": 6,
+      "imageUrl": "https://i.pinimg.com/1200x/c1/6a/a8/c16aa8402016f2eaea10a55ec2142528.jpg",
+      "importDate": "2025-07-17",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "AirPods Pro (2nd Gen)",
+      "price": 5990000,
+      "description": "Tai nghe không dây chống ồn chủ động của Apple",
+      "category": {
+        "id": 3,
+        "name": "Accessories"
+      },
+      "quantity": 0,
+      "imageUrl": "https://i.pinimg.com/736x/a9/63/0c/a9630c88c26a535c7d02c30729aaa8a2.jpg",
+      "importDate": "2025-07-19",
+      "status": "Out of Stock",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Sony WH-1000XM5",
+      "price": 8490000,
+      "description": "Tai nghe chống ồn hàng đầu, pin 30 giờ",
+      "category": {
+        "id": 3,
+        "name": "Accessories"
+      },
+      "quantity": 7,
+      "imageUrl": "https://i.pinimg.com/736x/25/2d/48/252d48afecc7e8c2cc426d283b89f0f0.jpg",
+      "importDate": "2025-07-20",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Apple Watch Series 9",
+      "price": 11990000,
+      "description": "Smartwatch của Apple với nhiều tính năng theo dõi sức khỏe",
+      "category": {
+        "id": 3,
+        "name": "Accessories"
+      },
+      "quantity": 4,
+      "imageUrl": "https://i.pinimg.com/1200x/23/aa/02/23aa0275ccd57d2db562a0db72a686a4.jpg",
+      "importDate": "2025-07-22",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "iPad Air (M1)",
+      "price": 16990000,
+      "description": "Máy tính bảng Apple với chip M1 mạnh mẽ",
+      "category": {
+        "id": 4,
+        "name": "Tablet"
+      },
+      "quantity": 0,
+      "imageUrl": "https://i.pinimg.com/474x/fe/08/68/fe0868d245a38d3dc29b8e8b3daf69e2.jpg",
+      "importDate": "2025-07-21",
+      "status": "Out of Stock",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Lenovo Tab P12 Pro",
+      "price": 13990000,
+      "description": "Tablet Android hiệu suất cao với màn hình AMOLED",
+      "category": {
+        "id": 4,
+        "name": "Tablet"
+      },
+      "quantity": 5,
+      "imageUrl": "https://i.pinimg.com/1200x/f9/ae/27/f9ae27e7040e4a26339e7c4ee978027f.jpg",
+      "importDate": "2025-07-16",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Logitech MX Master 3S",
+      "price": 2490000,
+      "description": "Chuột không dây cao cấp dành cho dân văn phòng và lập trình",
+      "category": {
+        "id": 3,
+        "name": "Accessories"
+      },
+      "quantity": 20,
+      "imageUrl": "https://i.pinimg.com/474x/2e/01/57/2e0157ba7027813654105905493cc18a.jpg",
+      "importDate": "2025-07-15",
+      "status": "Available",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Asus ROG Strix G16",
+      "price": 39990000,
+      "description": "Laptop gaming hiệu năng cao với GPU RTX 4060",
+      "category": {
+        "id": 1,
+        "name": "Laptop"
+      },
+      "quantity": 0,
+      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
+      "importDate": "2025-07-23",
+      "status": "Out of Stock",
+      "addresses": [
+        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
+        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
+        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+      ]
+    },
+    {
+      "name": "Asus ROG Strix G16",
+      "price": 39990000,
+      "quantity": 10,
+      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
+      "addresses": [
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
+      ],
+      "category": {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+      },
+      "description": "Laptop gaming hiệu năng cao với GPU RTX 4060",
+      "importDate": "2025-07-29",
+      "status": "Available",
+      "id": 12
+    },
+    {
+      "name": "Bình GOLD 24k",
+      "price": 0,
+      "quantity": "",
+      "imageUrl": "",
+      "addresses": [
+        "Đà Nẵng"
+      ],
+      "category": {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+      },
+      "description": "",
+      "importDate": "2025-07-29",
+      "status": "Out of Stock",
+      "id": 13
+    },
+    {
+      "name": "Máy tính ASUS",
+      "price": 77777,
+      "quantity": 10,
+      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
+      "addresses": [
+        "Đà Nẵng"
+      ],
+      "category": {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+      },
+      "description": "",
+      "importDate": "2025-07-29",
+      "status": "Available",
+      "id": 14
+    },
+    {
+      "name": "Binh",
+      "price": 77777,
+      "quantity": 10,
+      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
+      "addresses": [
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
+      ],
+      "category": {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+      },
+      "description": "",
+      "importDate": "2025-07-29",
+      "status": "Available",
+      "id": 15
+    },
+    {
+      "name": "Máy tính ASUS",
+      "price": 77777,
+      "quantity": 10,
+      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
+      "addresses": [
+        "Đà Nẵng"
+      ],
+      "category": {
+        "id": 1,
+        "name": "Laptop",
+        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+      },
+      "description": "A Chung béo",
+      "importDate": "2025-07-29",
+      "status": "Available",
+      "id": 16
     }
   ],
-  "customers": [
+  "categories": [
     {
       "id": 1,
-      "name": "Bình"
+      "name": "Laptop",
+      "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "description": "Điện thoại thông minh chạy iOS và Android"
+    },
+    {
+      "id": 3,
+      "name": "Accessories",
+      "description": "Phụ kiện như tai nghe, chuột, đồng hồ thông minh"
+    },
+    {
+      "id": 4,
+      "name": "Tablet",
+      "description": "Máy tính bảng cho giải trí và làm việc"
     }
   ]
 }

@@ -62,22 +62,39 @@ export async function updateById(id, student) {
   // }
 // }
 
-export async function search(searchName,searchClass) {
-  try {
-    const response = await axios.get(`http://localhost:8080/students`);
-    const students = response.data;
-    
-    const filtered = students.filter((student)=> {
-      const nameKey = student.name.toLowerCase().includes(searchName.toLowerCase());
-      const classKey = student.classCG.name.toLowerCase().includes(searchClass.toLowerCase());
-      return nameKey&&classKey;
-    });
-return filtered;
+// export async function search(searchName,searchClass) {
+  // try {
+    // const response = await axios.get(`http://localhost:8080/students`);
+    // const students = response.data;
+    // 
+    // const filtered = students.filter((student)=> {
+      // const nameKey = student.name.toLowerCase().includes(searchName.toLowerCase());
+      // const classKey = student.classCG.name.toLowerCase().includes(searchClass.toLowerCase());
+      // return nameKey&&classKey;
+    // });
+// return filtered;
+// 
+  // } catch (error) {
+    // console.log("Error" + error);
+    // return [];
+  // }
+// }
 
-  } catch (error) {
-    console.log("Error" + error);
-    return [];
+export async function search(searchName,searchClass,page,size) {
+  let url = `http://localhost:8080/students?name_like=${searchName}&classCG.id=${searchClass}&_page=${page}&_limit=${size}`;
+  if (searchClass === "") {
+    url = `http://localhost:8080/students?name_like=${searchName}&_page=${page}&_limit=${size}`;
   }
+  try {
+    const response = await axios.get(url);
+    const data = response.data;
+    const totalRecord = response.headers['x-total-count'];
+    return {data,totalRecord};
+  } catch (error) {
+    console.log(error);
+    
+  }
+  
 }
 // export let studentList = [
   // {

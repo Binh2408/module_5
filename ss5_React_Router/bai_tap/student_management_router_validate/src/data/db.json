@@ -2,14 +2,14 @@
   "students": [
     {
       "id": 1,
-      "name": "Bình GOLD",
+      "name": "BinhCute",
       "subject": [
         "Java",
         "JavaScript",
         "React"
       ],
       "classCG": {
-        "id": 1,
+        "id": 2,
         "name": "C03"
       }
     },
@@ -49,6 +49,17 @@
         "id": 2,
         "name": "C03"
       }
+    },
+    {
+      "name": "KhanhBeo",
+      "subject": [
+        "JavaScript"
+      ],
+      "classCG": {
+        "id": 1,
+        "name": "C02"
+      },
+      "id": 5
     }
   ],
   "classCG": [
