@@ -4,20 +4,19 @@
       "id": 1,
       "name": "iPhone 14 Pro Max",
       "price": 33990000,
-      "description": "Điện thoại cao cấp của Apple với chip A16 Bionic",
+      "quantity": 5,
+      "imageUrl": "https://i.pinimg.com/1200x/72/18/fe/7218fe67a5a40f65bb305479edc8a0da.jpg",
+      "importDate": "2025-07-20",
+      "addresses": [
+        "Đà Nẵng",
+        "Huế"
+      ],
       "category": {
         "id": 2,
         "name": "Smartphone"
       },
-      "quantity": 5,
-      "imageUrl": "https://i.pinimg.com/1200x/72/18/fe/7218fe67a5a40f65bb305479edc8a0da.jpg",
-      "importDate": "2025-07-20",
-      "status": "Available",
-      "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
-      ]
+      "description": "Điện thoại cao cấp của Apple với chip A16 Bionic",
+      "status": "Available"
     },
     {
       "id": 2,
@@ -33,9 +32,9 @@
       "importDate": "2025-07-21",
       "status": "Out of Stock",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -52,9 +51,9 @@
       "importDate": "2025-07-18",
       "status": "Available",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -71,9 +70,9 @@
       "importDate": "2025-07-17",
       "status": "Available",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -90,9 +89,9 @@
       "importDate": "2025-07-19",
       "status": "Out of Stock",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -109,9 +108,9 @@
       "importDate": "2025-07-20",
       "status": "Available",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -128,9 +127,9 @@
       "importDate": "2025-07-22",
       "status": "Available",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -147,9 +146,9 @@
       "importDate": "2025-07-21",
       "status": "Out of Stock",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -166,9 +165,9 @@
       "importDate": "2025-07-16",
       "status": "Available",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -185,9 +184,9 @@
       "importDate": "2025-07-15",
       "status": "Available",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -204,9 +203,9 @@
       "importDate": "2025-07-23",
       "status": "Out of Stock",
       "addresses": [
-        "Chi nhánh Quận 1 - 123 Lê Lợi, TP.HCM",
-        "Chi nhánh Quận 7 - 456 Nguyễn Văn Linh, TP.HCM",
-        "Chi nhánh Hà Nội - 789 Cầu Giấy, Hà Nội"
+        "Đà Nẵng",
+        "Huế",
+        "Quảng Bình"
       ]
     },
     {
@@ -221,8 +220,7 @@
       ],
       "category": {
         "id": 1,
-        "name": "Laptop",
-        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+        "name": "Laptop"
       },
       "description": "Laptop gaming hiệu năng cao với GPU RTX 4060",
       "importDate": "2025-07-29",
@@ -230,46 +228,12 @@
       "id": 12
     },
     {
-      "name": "Bình GOLD 24k",
-      "price": 0,
-      "quantity": "",
-      "imageUrl": "",
-      "addresses": [
-        "Đà Nẵng"
-      ],
-      "category": {
-        "id": 1,
-        "name": "Laptop",
-        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
-      },
-      "description": "",
-      "importDate": "2025-07-29",
-      "status": "Out of Stock",
-      "id": 13
-    },
-    {
-      "name": "Máy tính ASUS",
-      "price": 77777,
+      "id": 14,
+      "name": "Máy tính của Bình",
+      "price": 88888888,
       "quantity": 10,
       "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
-      "addresses": [
-        "Đà Nẵng"
-      ],
-      "category": {
-        "id": 1,
-        "name": "Laptop",
-        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
-      },
-      "description": "",
-      "importDate": "2025-07-29",
-      "status": "Available",
-      "id": 14
-    },
-    {
-      "name": "Binh",
-      "price": 77777,
-      "quantity": 10,
-      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
+      "importDate": "2025-07-25",
       "addresses": [
         "Đà Nẵng",
         "Huế",
@@ -277,53 +241,28 @@
       ],
       "category": {
         "id": 1,
-        "name": "Laptop",
-        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+        "name": "Laptop"
       },
       "description": "",
-      "importDate": "2025-07-29",
-      "status": "Available",
-      "id": 15
-    },
-    {
-      "name": "Máy tính ASUS",
-      "price": 77777,
-      "quantity": 10,
-      "imageUrl": "https://i.pinimg.com/736x/80/9c/b4/809cb465d2c05f25733030778b252f16.jpg",
-      "addresses": [
-        "Đà Nẵng"
-      ],
-      "category": {
-        "id": 1,
-        "name": "Laptop",
-        "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
-      },
-      "description": "A Chung béo",
-      "importDate": "2025-07-29",
-      "status": "Available",
-      "id": 16
+      "status": "Available"
     }
   ],
   "categories": [
     {
       "id": 1,
-      "name": "Laptop",
-      "description": "Các dòng máy tính xách tay phục vụ học tập, làm việc và chơi game"
+      "name": "Laptop"
     },
     {
       "id": 2,
-      "name": "Smartphone",
-      "description": "Điện thoại thông minh chạy iOS và Android"
+      "name": "Smartphone"
     },
     {
       "id": 3,
-      "name": "Accessories",
-      "description": "Phụ kiện như tai nghe, chuột, đồng hồ thông minh"
+      "name": "Accessories"
     },
     {
       "id": 4,
-      "name": "Tablet",
-      "description": "Máy tính bảng cho giải trí và làm việc"
+      "name": "Tablet"
     }
   ]
 }
