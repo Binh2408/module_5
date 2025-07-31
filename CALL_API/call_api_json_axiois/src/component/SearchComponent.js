@@ -4,7 +4,11 @@ function SearchComponent({
   categoryList = [],
   selectedCate,
   setSelectedCate,
-  placeholder = "Search By Name..."
+  placeholder = "Search By Name...",
+  fromDate,
+  setFromDate,
+  toDate,
+  setToDate,
 }) {
   return (
     <div style={{ margin: "10px 0" }}>
@@ -31,6 +35,24 @@ function SearchComponent({
               </option>
             ))}
           </select>
+        </div>
+        <div className="col-md-3">
+          <label>From: </label>
+          <input
+            type="date"
+            className="form-control"
+            value={fromDate}
+            onChange={(e) => setFromDate(e.target.value)}
+          />
+        </div>
+        <div className="col-md-3">
+          <label>To:</label>
+          <input
+            type="date"
+            className="form-control"
+            value={toDate}
+            onChange={(e) => setToDate(e.target.value)}
+          />
         </div>
       </div>
     </div>

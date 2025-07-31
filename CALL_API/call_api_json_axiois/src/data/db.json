@@ -76,25 +76,6 @@
       ]
     },
     {
-      "id": 5,
-      "name": "AirPods Pro (2nd Gen)",
-      "price": 5990000,
-      "description": "Tai nghe không dây chống ồn chủ động của Apple",
-      "category": {
-        "id": 3,
-        "name": "Accessories"
-      },
-      "quantity": 0,
-      "imageUrl": "https://i.pinimg.com/736x/a9/63/0c/a9630c88c26a535c7d02c30729aaa8a2.jpg",
-      "importDate": "2025-07-19",
-      "status": "Out of Stock",
-      "addresses": [
-        "Đà Nẵng",
-        "Huế",
-        "Quảng Bình"
-      ]
-    },
-    {
       "id": 6,
       "name": "Sony WH-1000XM5",
       "price": 8490000,
@@ -242,6 +223,23 @@
       "category": {
         "id": 1,
         "name": "Laptop"
+      },
+      "description": "",
+      "status": "Available"
+    },
+    {
+      "id": 15,
+      "name": "iPhone 16 Pro Max",
+      "price": 88888888,
+      "quantity": 10,
+      "imageUrl": "",
+      "importDate": "2025-07-31",
+      "addresses": [
+        "Đà Nẵng"
+      ],
+      "category": {
+        "id": 2,
+        "name": "Smartphone"
       },
       "description": "",
       "status": "Available"

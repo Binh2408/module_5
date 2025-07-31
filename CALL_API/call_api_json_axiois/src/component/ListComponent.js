@@ -12,7 +12,7 @@ function ListComponent() {
   const [productList, setProductList] = useState({});
   const [isShowModal, setIsShowModal] = useState(false);
   const [deleteProduct, setDeleteProduct] = useState({
-    id:0,
+    id: 0,
     name: "",
     price: "",
     quantity: "",
@@ -22,48 +22,55 @@ function ListComponent() {
     description: "",
   });
 
+  const [fromDate, setFromDate] = useState("");
+  const [toDate, setToDate] = useState("");
+
   const handleShowDeleteModal = (deleteProduct) => {
-    setIsShowModal(pre => !pre);
+    setIsShowModal((pre) => !pre);
     setDeleteProduct(deleteProduct);
-  }
+  };
 
   const handleCloseDeleteModal = () => {
-    setIsShowModal(pre => !pre);
-  }
-  const [searchName,setSearchName] = useState("");
-  const [selectedCate,setSelectedCate] = useState("");
+    setIsShowModal((pre) => !pre);
+  };
+  const [searchName, setSearchName] = useState("");
+  const [selectedCate, setSelectedCate] = useState("");
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const [size, setSize] = useState(5);
   useEffect(() => {
     const fetchData = async () => {
-      const {data,totalRecord} = await search(
+      const { data, totalRecord } = await search(
         searchName,
         selectedCate,
         page,
-        size
+        size,
+        fromDate,
+        toDate
       );
       setProductList(data);
-      setTotalPage(() => Math.ceil(totalRecord/size));
+      setTotalPage(() => Math.ceil(totalRecord / size));
       setProductList(data);
     };
     fetchData();
     // console.log(selectedCate);
     // console.log(searchName);
-    
-    
-  }, [isShowModal,searchName,selectedCate,page,size]);
+  }, [isShowModal, searchName, selectedCate, page, size, fromDate, toDate]);
 
+  //phải có để mỗi lần search nó load lại page
+  useEffect(() => {
+    setPage(1);
+  }, [searchName, selectedCate]);
 
-  const [categoryList,setCategoryList] = useState([]);
+  const [categoryList, setCategoryList] = useState([]);
   useEffect(() => {
     const fetchCategory = async () => {
       const data = await findAllCategory();
       setCategoryList(data);
     };
     fetchCategory();
-  },[]);
-  
+  }, []);
+
   //Format giá tiền
   const formatCurrency = (value) => {
     return new Intl.NumberFormat("vi-VN", {
@@ -81,7 +88,7 @@ function ListComponent() {
       year: "numeric",
     });
   };
-const handlePre = () => {
+  const handlePre = () => {
     if (page > 1) {
       setPage((pre) => pre - 1);
     }
@@ -92,6 +99,7 @@ const handlePre = () => {
       setPage((pre) => pre + 1);
     }
   };
+
   return (
     <Container className="mt-4">
       <h2 className="mb-3">Product List</h2>
@@ -101,6 +109,10 @@ const handlePre = () => {
         categoryList={categoryList}
         selectedCate={selectedCate}
         setSelectedCate={setSelectedCate}
+        fromDate={fromDate}
+        setFromDate={setFromDate}
+        toDate={toDate}
+        setToDate={setToDate}
       />
       <Table striped bordered hover>
         <thead>
@@ -151,33 +163,33 @@ const handlePre = () => {
                 <td>{product.category?.name}</td>
                 {/* <td>{product.description}</td> */}
                 <td>
-                    <Button
-                        variant="info"
-                        size="sm"
-                        as={Link}
-                        to={`/detail/${product.id}`}
-                    >
-                        Detail
-                    </Button>
+                  <Button
+                    variant="info"
+                    size="sm"
+                    as={Link}
+                    to={`/detail/${product.id}`}
+                  >
+                    Detail
+                  </Button>
                 </td>
                 <td>
-                    <Button
-                        variant="danger"
-                        size="sm"
-                        onClick={() => handleShowDeleteModal(product)}
-                    >
-                        Delete
-                    </Button>
+                  <Button
+                    variant="danger"
+                    size="sm"
+                    onClick={() => handleShowDeleteModal(product)}
+                  >
+                    Delete
+                  </Button>
                 </td>
                 <td>
-                    <Button
-                        variant="warning"
-                        size="sm"
-                        as={Link}
-                        to={`/edit/${product.id}`}
-                    >
-                        Edit
-                    </Button>
+                  <Button
+                    variant="warning"
+                    size="sm"
+                    as={Link}
+                    to={`/edit/${product.id}`}
+                  >
+                    Edit
+                  </Button>
                 </td>
               </tr>
             ))
@@ -194,7 +206,7 @@ const handlePre = () => {
         <Pagination.Prev disabled={page === 1} onClick={handlePre}>
           Previous
         </Pagination.Prev>
-        {[...Array(totalPage)].map((e,i) => (
+        {[...Array(totalPage)].map((e, i) => (
           <Pagination.Item
             key={i}
             active={i + 1 === page}
